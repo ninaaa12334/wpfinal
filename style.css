@@ -1,387 +1,97 @@
 /*
-Theme Name: Job Board
+Theme Name: Job board
 Author: nina
-Description: A custom theme for job listings.
-Version: 1.1
+Version: 1.0
 */
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    line-height: 1.6;
-    color: #333;
     background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #212529;
 }
 
-/* Navigation */
-.navbar-dark {
-    background-color: #1a252f;
+.container {
+    margin-top: 40px;
 }
 
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: 700;
-    transition: color 0.3s ease;
+/* Header fix */
+.custom-header {
+    background-color: #524f4f;
+    padding: 20px 0;
+    margin-bottom: 40px;
+    color: white;
 }
 
-.navbar-brand:hover {
-    color: #007bff;
+/* Navbar specific overrides */
+.custom-header .navbar-brand {
+    font-size: 2rem;
+    color: white;
 }
 
-.navbar-nav .nav-link {
-    color: #fff;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.custom-header .navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+    transition: 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover {
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
+.custom-header .navbar-nav .nav-link:hover {
+    color: #ffc107 !important;
 }
 
-.navbar-nav .dropdown-menu {
-    background-color: #1a252f;
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.navbar {
+    background-color: transparent; /* Remove bootstrap bg */
 }
 
-.navbar-nav .dropdown-item {
-    color: #fff;
-    transition: background-color 0.3s ease;
-}
-
-.navbar-nav .dropdown-item:hover {
-    background-color: #007bff;
-}
-
-/* Carousel */
-#jobSlider {
-    margin-bottom: 3rem;
-}
-
-.carousel-image-wrapper {
-    position: relative;
-}
-
-.carousel-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
-}
-
-.carousel-item img {
-    object-fit: cover;
-    height: 600px;
-    width: 100%;
-}
-
-.carousel-caption {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    text-align: center;
-    color: #fff;
-    padding: 20px;
-}
-
-.carousel-caption h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 1rem;
-}
-
-.carousel-caption p {
-    font-size: 1.25rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    margin-bottom: 1.5rem;
-}
-
-.carousel-caption .btn {
-    font-size: 1.1rem;
-    padding: 12px 24px;
-    border-radius: 5px;
-    background: linear-gradient(45deg, #007bff, #00b7eb);
-    border: none;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.carousel-caption .btn:hover {
-    background: linear-gradient(45deg, #0056b3, #0098c7);
-    transform: scale(1.05);
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    width: 5%;
-    background: rgba(0, 0, 0, 0.3);
-    transition: background 0.3s ease;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    background: rgba(0, 0, 0, 0.5);
-}
-
-/* Cards (Jobs and Companies) */
 .card {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.card-img-top {
-    object-fit: cover;
-    height: 200px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.card-body {
-    padding: 1.5rem;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .card-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #007bff;
-    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    color: #5144c2;
 }
 
 .card-text {
-    font-size: 0.95rem;
-    color: #555;
-    margin-bottom: 1rem;
-}
-
-.card .btn {
-    background: linear-gradient(45deg, #007bff, #00b7eb);
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.card .btn:hover {
-    background: linear-gradient(45deg, #0056b3, #0098c7);
-    transform: scale(1.05);
-}
-
-/* Job Search Form */
-.job-search-form .input-group {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.job-search-form .form-control {
-    border: 1px solid #ced4da;
-    border-radius: 5px 0 0 5px;
-    padding: 10px;
     font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: #343a40;
 }
 
-.job-search-form .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-}
-
-.job-search-form .btn {
-    border-radius: 0 5px 5px 0;
-    padding: 10px 20px;
-    background: linear-gradient(45deg, #007bff, #00b7eb);
-    border: none;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.job-search-form .btn:hover {
-    background: linear-gradient(45deg, #0056b3, #0098c7);
-    transform: scale(1.05);
-}
-
-.job-search-form .form-select {
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.job-search-form .form-select:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-}
-
-/* Job Submission Form */
-#job-submission-form .form-label {
-    font-weight: 600;
-    color: #333;
-}
-
-#job-submission-form .form-control,
-#job-submission-form .form-select {
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-#job-submission-form .form-control:focus,
-#job-submission-form .form-select:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-}
-
-#job-submission-form .btn {
-    background: linear-gradient(45deg, #007bff, #00b7eb);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-#job-submission-form .btn:hover {
-    background: linear-gradient(45deg, #0056b3, #0098c7);
-    transform: scale(1.05);
-}
-
-/* Alerts */
-.alert {
-    border-radius: 5px;
-    padding: 15px;
-    font-size: 1rem;
-}
-
-/* Sidebar */
-.sidebar .card {
-    background-color: #f1f3f5;
-    border-radius: 10px;
-}
-
-.sidebar .card-header {
-    background-color: #e9ecef;
-    border-bottom: none;
-    font-weight: 600;
-}
-
-/* Footer */
 footer {
-    background: #1a252f;
-    color: #fff;
-    padding: 2rem 0;
+    margin-top: 40px;
+    padding: 20px 0;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
 }
 
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: #007bff;
+a {
+    color: #000000;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-footer a:hover {
-    color: #00b7eb;
+a:hover {
+    text-decoration: underline;
 }
 
-/* Pagination */
-.pagination .page-link {
-    border: none;
-    color: #007bff;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.job-card {
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    transition: transform 0.2s ease;
+    background-color: #ffffff;
 }
 
-.pagination .page-link:hover {
-    background-color: #007bff;
-    color: #fff;
+.job-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-.pagination .page-item.active .page-link {
-    background-color: #007bff;
-    border-color: #007bff;
-}
+  
 
-/* Accessibility */
-:focus {
-    outline: 2px solid #007bff;
-    outline-offset: 2px;
-}
 
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-    .carousel-item img {
-        height: 500px;
-    }
 
-    .carousel-caption h1 {
-        font-size: 2.5rem;
-    }
 
-    .carousel-caption p {
-        font-size: 1.1rem;
-    }
-
-    .carousel-caption .btn {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .carousel-item img {
-        height: 400px;
-    }
-
-    .carousel-caption h1 {
-        font-size: 2rem;
-    }
-
-    .carousel-caption p {
-        font-size: 1rem;
-    }
-
-    .carousel-caption .btn {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
-
-    .card {
-        margin-bottom: 1.5rem;
-    }
-
-    .job-search-form .input-group {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 576px) {
-    .carousel-item img {
-        height: 300px;
-    }
-
-    .carousel-caption h1 {
-        font-size: 1.5rem;
-    }
-
-    .carousel-caption p {
-        font-size: 0.9rem;
-    }
-
-    .navbar-brand {
-        font-size: 1.25rem;
-    }
-}
+  
