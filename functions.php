@@ -1,5 +1,5 @@
 <?php
-// Theme Support
+
 function jobboard_theme_setup() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
@@ -7,7 +7,7 @@ function jobboard_theme_setup() {
 }
 add_action('after_setup_theme', 'jobboard_theme_setup');
 
-// Register Custom Post Type: Job
+
 function jobboard_register_job_post_type() {
     $labels = array(
         'name' => 'Jobs',
@@ -40,7 +40,6 @@ function jobboard_register_job_post_type() {
 }
 add_action('init', 'jobboard_register_job_post_type');
 
-// Register Navigation Menu
 function jobboard_register_menus() {
     register_nav_menus(array(
         'main-menu' => __('Main Menu'),
@@ -48,22 +47,19 @@ function jobboard_register_menus() {
 }
 add_action('init', 'jobboard_register_menus');
 
-// Enqueue Styles and Scripts
 function jobboard_enqueue_scripts() {
-    // Bootstrap CSS
+ 
     wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
 
-    // Main stylesheet
     wp_enqueue_style('jobboard-style', get_stylesheet_uri());
 
-    // Bootstrap JS
     wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'jobboard_enqueue_scripts');
 
 function exclude_jobs_from_blog($query) {
     if (!is_admin() && $query->is_main_query() && is_home()) {
-        $query->set('post_type', 'post'); // Only show regular posts on blog
+        $query->set('post_type', 'post'); 
     }
 }
 add_action('pre_get_posts', 'exclude_jobs_from_blog');

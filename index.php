@@ -5,7 +5,7 @@
 
     <div class="row">
         <?php
-        // Query for jobs (replace with custom post type if needed)
+       
         $args = array(
             'post_type' => 'job',
             'posts_per_page' => 6,
@@ -16,7 +16,7 @@
         ?>
         <div class="col-md-4 mb-4">
             <div class="job-card">
-                <!-- Job Image -->
+            
                 <?php if (has_post_thumbnail()) : ?>
                     <div class="job-image mb-3">
                         <?php the_post_thumbnail('medium', ['class' => 'img-fluid']); ?>
@@ -25,7 +25,6 @@
 
                 <h2 class="job-title"><?php the_title(); ?></h2>
 
-                <!-- Job Details -->
                 <p><strong>Company:</strong> 
                     <?php 
                     $company_name = get_field('company_name'); 

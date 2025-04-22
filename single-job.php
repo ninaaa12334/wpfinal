@@ -8,17 +8,17 @@
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <div class="job-card">
-                <!-- Job Image -->
+            
                 <?php if (has_post_thumbnail()) : ?>
                     <div class="job-image mb-4">
                         <?php the_post_thumbnail('large', ['class' => 'img-fluid']); ?>
                     </div>
                 <?php endif; ?>
 
-                <!-- Job Title -->
+          
                 <h2 class="job-title"><?php the_title(); ?></h2>
 
-                <!-- Job Details -->
+             
                 <p><strong>Company:</strong> 
                     <?php 
                     $company_name = get_field('company_name'); 

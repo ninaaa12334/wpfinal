@@ -12,7 +12,7 @@
             $company_jobs = new WP_Query(array(
                 'post_type' => 'job',
                 'posts_per_page' => 5,
-                // Add meta query if linking jobs to companies (requires ACF or custom field)
+                
             ));
             if ($company_jobs->have_posts()) :
                 while ($company_jobs->have_posts()) : $company_jobs->the_post();

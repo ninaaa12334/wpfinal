@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php bloginfo('name'); ?> - <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
 
-    <!-- Bootstrap CSS (latest) -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom Theme Style -->
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 
     <?php wp_head(); ?>
